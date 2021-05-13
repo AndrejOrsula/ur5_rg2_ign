@@ -540,15 +540,15 @@
                 <xyz>0 0 1</xyz>
                 <limit>
                     <effort>10.6</effort>
-                    <lower>0</lower>
+                    <lower>0.0</lower>
                     <upper>1.18</upper>
                     <velocity>1.57</velocity>
                 </limit>
                 <dynamics>
                     <spring_reference>0</spring_reference>
                     <spring_stiffness>0</spring_stiffness>
-                    <damping>5</damping>
-                    <friction>0.5</friction>
+                    <damping>1</damping>
+                    <friction>0.005</friction>
                 </dynamics>
             </axis>
         </joint>
@@ -561,15 +561,15 @@
                 <xyz>0 0 -1</xyz>
                 <limit>
                     <effort>10.6</effort>
-                    <lower>0</lower>
+                    <lower>0.0</lower>
                     <upper>1.18</upper>
                     <velocity>1.57</velocity>
                 </limit>
                 <dynamics>
                     <spring_reference>0</spring_reference>
                     <spring_stiffness>0</spring_stiffness>
-                    <damping>5</damping>
-                    <friction>0.5</friction>
+                    <damping>1</damping>
+                    <friction>0.005</friction>
                 </dynamics>
             </axis>
         </joint>
