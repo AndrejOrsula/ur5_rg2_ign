@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>ur5_rg2_ign</name>
+    <version>1.0.0</version>
+    <description>Universal Robot 5 (UR5) robot with OnRobot RG2 gripper for Ignition and MoveIt2.</description>
+    <maintainer email="orsula.andrej@gmail.com">Andrej Orsula</maintainer>
+    <author>Andrej Orsula</author>
+    <license>BSD</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>

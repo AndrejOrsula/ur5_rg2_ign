@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+    <model name="ur5_rg2">
+
+        <!-- Fix To World -->
+        <joint name="ur5_rg2_joint_world" type="fixed">
+            <parent>world</parent>
+            <child>base_link</child>
+        </joint>
+
+
+        <!-- Arm Links -->
+        <link name="base_link">
+            <visual name="base_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="base_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/base.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>-7.83914e-07 0.00442178 0.184343 0 0 0</pose>
+                <mass>4.210389694173812</mass>
+                <inertia>
+                    <ixx>0.09309670560602573</ixx>
+                    <iyy>0.09257037651287492</iyy>
+                    <izz>0.004310645613985299</izz>
+                    <ixy>5.711270872759674e-09</ixy>
+                    <ixz>2.0039833861772347e-07</ixz>
+                    <iyz>0.0047053532779924665</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="shoulder_link">
+            <pose relative_to="shoulder_pan_joint">0 0 0 0 0 0</pose>
+            <visual name="shoulder_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/shoulder.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="shoulder_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/shoulder.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>-3.81853e-06 0.00927291 -0.0018563 0 0 0</pose>
+                <mass>2.6078628081050645</mass>
+                <inertia>
+                    <ixx>0.00615890739477387</ixx>
+                    <iyy>0.005562932983198189</iyy>
+                    <izz>0.005255082470414319</izz>
+                    <ixy>8.486678716437087e-07</ixy>
+                    <ixz>1.436028981488676e-07</ixz>
+                    <iyz>-0.00018809980689883695</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="upper_arm_link">
+            <pose relative_to="shoulder_lift_joint">0 0 0 0 0 0</pose>
+            <visual name="upper_arm_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/upperarm.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="upper_arm_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/upperarm.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>9.68139e-10 -0.00107158 0.2125 0 0 0</pose>
+                <mass>9.034556202946057</mass>
+                <inertia>
+                    <ixx>0.2566537454248199</ixx>
+                    <iyy>0.25483850258961777</iyy>
+                    <izz>0.016022276702360172</izz>
+                    <ixy>-2.2173460061911962e-09</ixy>
+                    <ixz>2.3397723734924104e-06</ixz>
+                    <iyz>5.701897149736449e-09</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="forearm_link">
+            <pose relative_to="elbow_joint">0 0 0 0 0 0</pose>
+            <visual name="forearm_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/forearm.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="forearm_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/forearm.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>-7.83914e-07 0.00442178 0.184343 0 0 0</pose>
+                <mass>4.210389694173812</mass>
+                <inertia>
+                    <ixx>0.09309670560602573</ixx>
+                    <iyy>0.09257037651287492</iyy>
+                    <izz>0.004310645613985299</izz>
+                    <ixy>5.711270872759674e-09</ixy>
+                    <ixz>2.0039833861772347e-07</ixz>
+                    <iyz>0.0047053532779924665</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="wrist_1_link">
+            <pose relative_to="wrist_1_joint">0 0 0 0 0 0</pose>
+            <visual name="wrist_1_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/wrist1.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="wrist_1_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/wrist1.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>2.12195e-06 0.0886236 -0.00357675 0 0 0</pose>
+                <mass>0.8652783044597422</mass>
+                <inertia>
+                    <ixx>0.0011006744464830784</ixx>
+                    <iyy>0.0010246557119841899</iyy>
+                    <izz>0.0007125213984803068</izz>
+                    <ixy>-4.062057055066431e-08</ixy>
+                    <ixz>-2.441133081746347e-08</ixz>
+                    <iyz>1.000924524333879e-05</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="wrist_2_link">
+            <pose relative_to="wrist_2_joint">0 0 0 0 0 0</pose>
+            <visual name="wrist_2_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/wrist2.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="wrist_2_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/wrist2.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>-2.12306e-06 -0.00357678 0.0901045 0 0 0</pose>
+                <mass>0.8652786866955592</mass>
+                <inertia>
+                    <ixx>0.0010980920821000012</ixx>
+                    <iyy>0.0007099378137563144</iyy>
+                    <izz>0.0010246570857519936</izz>
+                    <ixy>2.436032506659575e-08</ixy>
+                    <ixz>4.047086050601145e-08</ixz>
+                    <iyz>4.96085194908414e-06</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="wrist_3_link">
+            <pose relative_to="wrist_3_joint">0 0 0 0 0 0</pose>
+            <visual name="wrist_3_link_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/ur5/wrist3.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="wrist_3_link_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/ur5/wrist3.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>8.12548e-09 0.0630914 0.000189932 0 0 0</pose>
+                <mass>0.23285976783205536</mass>
+                <inertia>
+                    <ixx>0.00010068520800989181</ixx>
+                    <iyy>0.00016016377462915846</iyy>
+                    <izz>9.951199288758246e-05</izz>
+                    <ixy>-1.3195380569038253e-11</ixy>
+                    <ixz>2.0466677535340047e-11</ixz>
+                    <iyz>3.421454203362164e-08</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+
+        <!-- Arm Joints -->
+        <joint name="shoulder_pan_joint" type="revolute">
+            <pose relative_to="base_link">0 0 0.089159 0 0 0</pose>
+            <parent>base_link</parent>
+            <child>shoulder_link</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit>
+                    <effort>150</effort>
+                    <lower>-6.28319</lower>
+                    <upper>6.28319</upper>
+                    <velocity>3.15</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>30</damping>
+                    <friction>4</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="shoulder_lift_joint" type="revolute">
+            <pose relative_to="shoulder_link">0 0.13585 0 0 0 0</pose>
+            <parent>shoulder_link</parent>
+            <child>upper_arm_link</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <effort>150</effort>
+                    <lower>-6.28319</lower>
+                    <upper>6.28319</upper>
+                    <velocity>3.15</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>45</damping>
+                    <friction>6</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="elbow_joint" type="revolute">
+            <pose relative_to="upper_arm_link">0 -0.1197 0.425 0 0 0</pose>
+            <parent>upper_arm_link</parent>
+            <child>forearm_link</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <effort>150</effort>
+                    <lower>-6.28319</lower>
+                    <upper>6.28319</upper>
+                    <velocity>3.15</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>35</damping>
+                    <friction>5</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="wrist_1_joint" type="revolute">
+            <pose relative_to="forearm_link">0 0 0.39225 0 0 0</pose>
+            <parent>forearm_link</parent>
+            <child>wrist_1_link</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <effort>28</effort>
+                    <lower>-6.28319</lower>
+                    <upper>6.28319</upper>
+                    <velocity>3.2</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>25</damping>
+                    <friction>3.5</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="wrist_2_joint" type="revolute">
+            <pose relative_to="wrist_1_link">0 0.093 0 0 0 0</pose>
+            <parent>wrist_1_link</parent>
+            <child>wrist_2_link</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit>
+                    <effort>28</effort>
+                    <lower>-6.28319</lower>
+                    <upper>6.28319</upper>
+                    <velocity>3.2</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>20</damping>
+                    <friction>2.5</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="wrist_3_joint" type="revolute">
+            <pose relative_to="wrist_2_link">0 0 0.09465 0 0 0</pose>
+            <parent>wrist_2_link</parent>
+            <child>wrist_3_link</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <effort>28</effort>
+                    <lower>-6.28319</lower>
+                    <upper>6.28319</upper>
+                    <velocity>3.2</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>15</damping>
+                    <friction>1.75</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+
+        <!-- Arm-Hand Fixed Joint -->
+        <joint name="ur5_hand_joint" type="fixed">
+            <pose relative_to="wrist_3_link">0 0.0823 0 1.570796325 0 1.570796325</pose>
+            <parent>wrist_3_link</parent>
+            <child>rg2_hand</child>
+        </joint>
+
+
+        <!-- Hand Links -->
+        <link name="rg2_hand">
+            <pose relative_to="ur5_hand_joint">0 0 0 0 0 0</pose>
+            <visual name="rg2_hand_visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/rg2/hand.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="rg2_hand_collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/rg2/hand.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>0.057581 -0.000169308 -3.3334e-05 0 0 0</pose>
+                <mass>0.29881464108881906</mass>
+                <inertia>
+                    <ixx>0.00010934311942148434</ixx>
+                    <iyy>0.0003327568173229071</iyy>
+                    <izz>0.00037338963627732164</izz>
+                    <ixy>2.4297126288189813e-07</ixy>
+                    <ixz>5.3958894994201004e-08</ixz>
+                    <iyz>2.4899876853227836e-07</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="rg2_leftfinger">
+            <pose relative_to="rg2_finger_joint1">0 0 0 0 0 0</pose>
+            <visual name="rg2_leftfinger_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/rg2/finger.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="rg2_leftfinger_collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/rg2/finger.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>2.15</mu>
+                            <mu2>2.15</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>-0.0176873 -0.00819142 -4.15573e-05 0 0 0</pose>
+                <mass>0.24059267945559043</mass>
+                <inertia>
+                    <ixx>3.3970932890017096e-05</ixx>
+                    <iyy>0.00029230476124314346</iyy>
+                    <izz>0.00030917405435097734</izz>
+                    <ixy>-4.8854610840491595e-05</ixy>
+                    <ixz>-1.1765879805737544e-08</ixz>
+                    <iyz>1.6350676533062336e-08</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <link name="rg2_rightfinger">
+            <pose relative_to="rg2_finger_joint2">0 0 0 0 0 0</pose>
+            <visual name="rg2_rightfinger_visual">
+                <pose>0 0 0 3.141592653589793 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>meshes/visual/rg2/finger.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="rg2_rightfinger_collision">
+                <pose>0 0 0 3.141592653589793 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>meshes/collision/rg2/finger.stl</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>2.15</mu>
+                            <mu2>2.15</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <pose>-0.0176873 -0.00819142 -4.15573e-05 3.141592653589793 0 0</pose>
+                <mass>0.24059267945559043</mass>
+                <inertia>
+                    <ixx>3.3970932890017096e-05</ixx>
+                    <iyy>0.00029230476124314346</iyy>
+                    <izz>0.00030917405435097734</izz>
+                    <ixy>-4.8854610840491595e-05</ixy>
+                    <ixz>-1.1765879805737544e-08</ixz>
+                    <iyz>1.6350676533062336e-08</iyz>
+                </inertia>
+            </inertial>
+        </link>
+
+        <!-- Finger Joints -->
+        <joint name="rg2_finger_joint1" type="revolute">
+            <pose relative_to="rg2_hand">0.105 0.017 0 0 0 0</pose>
+            <parent>rg2_hand</parent>
+            <child>rg2_leftfinger</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit>
+                    <effort>10.6</effort>
+                    <lower>0</lower>
+                    <upper>1.18</upper>
+                    <velocity>1.57</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>5</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="rg2_finger_joint2" type="revolute">
+            <pose relative_to="rg2_hand">0.105 -0.017 0 0 0 0</pose>
+            <parent>rg2_hand</parent>
+            <child>rg2_rightfinger</child>
+            <axis>
+                <xyz>0 0 -1</xyz>
+                <limit>
+                    <effort>10.6</effort>
+                    <lower>0</lower>
+                    <upper>1.18</upper>
+                    <velocity>1.57</velocity>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                    <damping>5</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+
+        <!-- End-effector -->
+        <link name="tool0">
+            <pose relative_to="end_effector_frame_fixed_joint">0 0 0 0 0 0</pose>
+        </link>
+        <joint name="end_effector_frame_fixed_joint" type="fixed">
+            <pose relative_to="wrist_3_link">0 0.275 0 -1.570796325 0 0</pose>
+            <parent>wrist_3_link</parent>
+            <child>tool0</child>
+        </joint>
+    </model>
+</sdf>
