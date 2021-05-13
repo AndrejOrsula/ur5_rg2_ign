@@ -3,11 +3,11 @@
 URDF and SDF descriptions of Universal Robot 5 (UR5) robot with OnRobot RG2 gripper for Ignition and MoveIt2.
 
 ![ur5_rg2](ur5_rg2/thumbnails/2.png)
-**Inertial properties** of all links are estimated with [estimate_inertial_properties.py](scripts/estimate_inertial_properties.py) script, while assuming total mass of 18.4 kg (UR5) + 0.78 kg (RG2) and uniform density. This script also redistributes a potion of hand's mass to fingers due to internal mechanical coupling.
+**Inertial properties** of all links are estimated with [estimate_inertial_properties.py](scripts/estimate_inertial_properties.py) script, while assuming total mass of 18.4 kg (UR5) + 0.78 kg (RG2) and uniform density. This script also redistributes a portion of hand's mass to fingers due to internal mechanical coupling.
 
 The SDF description also contains estimated **dynamic parameters** for joints. Note that these values are NOT based on real-life robot and should therefore be used with caution.
 
-> Kinematic model of gripper is simplified to include only a single actuated revolute joint per finger. The full model would include one actuated and two passive revolute joints, however, I could not achieve stable manipulation with that approach (contributions are welcome if you figure it out).
+> Kinematic model of gripper is simplified to include only a single actuated revolute joint per finger. The full model would include one actuated and two passive revolute joints, however, I could not achieve stable manipulation with that approach - [#1](https://github.com/AndrejOrsula/ur5_rg2_ign/issues/1) (contributions are welcome if you figure it out).
 
 ## Instructions
 
